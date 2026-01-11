@@ -37,7 +37,6 @@ authRouter.post('/login',async (req,res)=>{
   if(!user){
     throw new Error('user is not registered');
   }
-  console.log(user);
 
   const isPasswordValid = await user.comparePassword(password);
   if(!isPasswordValid){
