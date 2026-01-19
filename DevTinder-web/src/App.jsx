@@ -1,8 +1,23 @@
+import {createBrowserRouter, RouterProvider} from "react-router-dom"
+import RootLayot from "./RootLayout"
+import Login from "./Login"
+import Profile from "./Profile"
+
 
 function App() {
+  const router=createBrowserRouter([
+    {
+      path:'/',
+      element:<RootLayot/>,
+      children:[
+        {path:'login',element:<Login/>},
+        {path:'profile',element:<Profile/>}
+      ]
+    }
+  ])
   return (
     <>
-   <button className="btn btn-xl">Xlarge</button>
+    <RouterProvider router={router}/>
     </>
   )
 }
