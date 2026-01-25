@@ -1,7 +1,10 @@
 import {createBrowserRouter, RouterProvider} from "react-router-dom"
-import RootLayot from "./RootLayout"
-import Login from "./Login"
-import Profile from "./Profile"
+import RootLayot from "./components/RootLayout"
+import Login from "./components/Login"
+import Profile from "./components/Profile"
+import {Provider} from 'react-redux'
+import appStore from "./utils/appStore"
+import Feed from "./components/Feed"
 
 
 function App() {
@@ -11,13 +14,16 @@ function App() {
       element:<RootLayot/>,
       children:[
         {path:'login',element:<Login/>},
-        {path:'profile',element:<Profile/>}
+        {path:'profile',element:<Profile/>},
+        {path:'feed',element:<Feed/>}
       ]
     }
   ])
   return (
     <>
-    <RouterProvider router={router}/>
+    <Provider store={appStore}>
+      <RouterProvider router={router}/>
+    </Provider>
     </>
   )
 }
