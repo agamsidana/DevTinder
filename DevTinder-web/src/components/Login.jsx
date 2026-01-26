@@ -17,7 +17,6 @@ function Login() {
         emailId:email,
         password,
       },{withCredentials:true});
-      console.log(res);
       dispatch(addUser(res.data.user));
        navigate('/feed')
     } catch (err) {
