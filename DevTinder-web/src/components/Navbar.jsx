@@ -23,7 +23,7 @@ export function Navbar(){
     return(
     <div className="navbar bg-base-q00 shadow-sm">
   <div className="flex-1">
-    <Link to='/' className="btn btn-ghost text-xl">DevTinder</Link>
+    <Link to='/feed' className="btn btn-ghost text-xl">DevTinder</Link>
   </div>
   {user && <div className="flex gap-1 items-center">
     <p>Welcome,{user.firstName}</p>
