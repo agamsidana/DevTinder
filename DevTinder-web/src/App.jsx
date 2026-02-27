@@ -5,6 +5,9 @@ import Profile from "./components/Profile"
 import {Provider} from 'react-redux'
 import appStore from "./utils/appStore"
 import Feed from "./components/Feed"
+import Connections from "./components/connections"
+import Requests from "./components/requests"
+
 
 
 function App() {
@@ -15,7 +18,9 @@ function App() {
       children:[
         {path:'login',element:<Login/>},
         {path:'profile',element:<Profile/>},
-        {path:'feed',element:<Feed/>}
+        {path:'feed',element:<Feed/>},
+        {path:'connections',element:<Connections/>},
+        {path:'requests',element:<Requests/>}
       ]
     }
   ])

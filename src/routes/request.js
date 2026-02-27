@@ -67,7 +67,7 @@ requestRouter.post('/request/review/:status/:requestId',userAuth,async (req,res)
         return res.status(400).json({message:"Invalid status type"});
     }
 
-    const connectionRequest=ConnectionRequest.findOne({
+    const connectionRequest= await ConnectionRequest.findOne({
         status:'interested',
         _id:requestId,
         toUserId:loggedInUser._id
