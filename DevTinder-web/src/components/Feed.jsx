@@ -9,7 +9,7 @@ function Feed(){
     const dispatch=useDispatch();
     const {feed}=useSelector((state)=>state);
     const getFeed=async ()=>{
-        if(feed) return;
+        if(feed.length) return;
         const res=await axios.get(BASE_URL+"/feed",{withCredentials:true});
         dispatch(addFeed(res?.data?.data));
     }
@@ -20,7 +20,7 @@ function Feed(){
 
     return(
       <div className="my-6 flex justify-center">
-        {feed && <UserCard user={feed[0]}/>}
+        {feed.length>0 && <UserCard user={feed[0]}/>}
       </div>
     )
 }
