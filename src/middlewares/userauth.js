@@ -9,7 +9,7 @@ const userAuth= async(req,res,next)=>{
         return res.status(401).send('user not loggedIn');
     }
 
-    const {_id} = await jwt.verify(token,'agam@123');
+    const {_id} = await jwt.verify(token,process.env.JWT_SECRET);
 
     const userProfile=await  User.findById(_id);
 

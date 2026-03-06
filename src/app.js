@@ -9,6 +9,8 @@ const profileRouter=require('./routes/profile');
 const requestRouter=require('./routes/request');
 const userRouter = require('./routes/user');
 
+require('dotenv').config();
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
@@ -26,7 +28,7 @@ connectDB()
 .then(()=>{
     console.log('database connection established...')
 
-    app.listen(7777,()=>{
+    app.listen(process.env.PORT || 7777,()=>{
     console.log('sever is listening on post 7777')
 });
 
