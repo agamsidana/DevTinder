@@ -3,7 +3,7 @@ import { BASE_URL } from "../utils/constant";
 import { useDispatch } from "react-redux";
 import {removeFeedById} from '../utils/feedSlice'
 
-function UserCard({user}){
+function UserCard({user,isButtons}){
     const {_id,firstName,lastName,photo_url,age,gender,about}=user;
     const dispath=useDispatch()
 
@@ -26,10 +26,10 @@ function UserCard({user}){
     <h2 className="card-title">{firstName + " " + lastName}</h2>
     {about && <p>{about}</p>}
     {age && gender && <p>{age + "," +gender}</p>}
-    <div className="card-actions justify-center">
-        <button className="btn btn-primary" onClick={()=>{sendRequest('ignored',_id)}}>ignored</button>
+    { isButtons && <div className="card-actions justify-center">
+      <button className="btn btn-primary" onClick={()=>{sendRequest('ignored',_id)}}>ignored</button>
       <button className="btn btn-secondary" onClick={()=>{sendRequest('interested',_id)}}>intrested</button>
-    </div>
+    </div>}
   </div>
 </div>
     )

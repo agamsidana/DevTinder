@@ -120,7 +120,7 @@ function EditProfile(){
         </div>
       </div>
     </div>
-    <UserCard user={{firstName,lastName,gender,age,about,photo_url}}/>
+    <UserCard user={{firstName,lastName,gender,age,about,photo_url}} isButtons={false}/>
   </div> 
   </>  
     )

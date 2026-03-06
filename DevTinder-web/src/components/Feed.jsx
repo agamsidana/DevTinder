@@ -20,7 +20,7 @@ function Feed(){
 
     return(
       <div className="my-6 flex justify-center">
-        {feed.length>0 && <UserCard user={feed[0]}/>}
+        {feed.length>0 && <UserCard user={feed[0]} isButtons={true}/>}
       </div>
     )
 }
