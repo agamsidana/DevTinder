@@ -11,6 +11,8 @@ const userRouter = require('./routes/user');
 
 require('dotenv').config();
 
+require('./utils/cron-job');
+
 app.use(express.json());
 app.use(cookieParser());
 app.use(cors({
