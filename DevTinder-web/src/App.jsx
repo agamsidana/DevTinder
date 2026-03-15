@@ -7,6 +7,7 @@ import appStore from "./utils/appStore"
 import Feed from "./components/Feed"
 import Connections from "./components/connections"
 import Requests from "./components/requests"
+import Premium from "./components/premium"
 
 
 
@@ -20,7 +21,8 @@ function App() {
         {path:'profile',element:<Profile/>},
         {path:'feed',element:<Feed/>},
         {path:'connections',element:<Connections/>},
-        {path:'requests',element:<Requests/>}
+        {path:'requests',element:<Requests/>},
+        {path:'premium',element:<Premium/>}
       ]
     }
   ])
