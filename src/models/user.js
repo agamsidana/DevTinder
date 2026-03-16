@@ -56,6 +56,17 @@ const userSchema=new mongoose.Schema({
         min:18,
     },
 
+    stripeCustomeId:{
+        type:String,
+        required:false
+    },
+
+    isPremium:{
+        type:Boolean,
+        required:true,
+        default:false
+    },
+
     skills:{
         type:[String]
     },

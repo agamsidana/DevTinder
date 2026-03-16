@@ -4,12 +4,14 @@ const app=express();
 const cookieParser=require('cookie-parser');
 const cors=require('cors');
 
+require('dotenv').config();
+
 const authRouter=require('./routes/auth');
 const profileRouter=require('./routes/profile');
 const requestRouter=require('./routes/request');
 const userRouter = require('./routes/user');
+const paymentRouter=require('./routes/payment')
 
-require('dotenv').config();
 
 require('./utils/cron-job');
 
@@ -23,7 +25,8 @@ app.use(cors({
 app.use('/',authRouter);
 app.use('/',profileRouter);
 app.use('/',requestRouter);
-app.use('/',userRouter)
+app.use('/',userRouter);
+app.use('/',paymentRouter);
 
 
 connectDB()
