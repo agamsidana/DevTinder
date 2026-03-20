@@ -56,7 +56,7 @@ const userSchema=new mongoose.Schema({
         min:18,
     },
 
-    stripeCustomeId:{
+    stripeCustomerId:{
         type:String,
         required:false
     },
@@ -65,6 +65,11 @@ const userSchema=new mongoose.Schema({
         type:Boolean,
         required:true,
         default:false
+    },
+
+    premiumExpiredAt:{
+        type:Date,
+        required:false,
     },
 
     skills:{

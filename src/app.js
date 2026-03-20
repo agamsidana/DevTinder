@@ -15,10 +15,16 @@ const paymentRouter=require('./routes/payment')
 
 require('./utils/cron-job');
 
-app.use(express.json());
+app.use(express.json({
+    verify:(req,res,buf)=>{
+        if(req.originalUrl==='/webhook'){
+            req.rawBody=buf
+        }
+    }
+}));
 app.use(cookieParser());
 app.use(cors({
-    origin:'http://localhost:5174',
+    origin:'http://localhost:5173',
     credentials:true
 }));
 

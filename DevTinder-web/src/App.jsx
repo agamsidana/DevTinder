@@ -8,6 +8,8 @@ import Feed from "./components/Feed"
 import Connections from "./components/connections"
 import Requests from "./components/requests"
 import Premium from "./components/premium"
+import Success from "./components/success"
+import Failure from "./components/failure"
 
 
 
@@ -22,7 +24,9 @@ function App() {
         {path:'feed',element:<Feed/>},
         {path:'connections',element:<Connections/>},
         {path:'requests',element:<Requests/>},
-        {path:'premium',element:<Premium/>}
+        {path:'premium',element:<Premium/>},
+        {path:'success',element:<Success/>},
+        {path:'failure',element:<Failure/>}
       ]
     }
   ])
