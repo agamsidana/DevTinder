@@ -4,8 +4,9 @@ import { Navbar } from "./Navbar";
 import axios from "axios";
 import { BASE_URL } from "../utils/constant";
 import { useEffect } from "react";
-import { useDispatch } from "react-redux";
+import { useDispatch, useSelector } from "react-redux";
 import { addUser } from "../utils/userSlice";
+import { isPremium } from "../utils/verify-paymentSlice";
 
 function RootLayot(){
     const navigate=useNavigate();
@@ -22,8 +23,20 @@ function RootLayot(){
         }
     }
 
+    const verifyPayment=async()=>{
+        try{
+            const res=await axios.get(BASE_URL+'/payment-verify',{withCredentials:true});
+            dispatch(isPremium(res.data));
+
+        }
+        catch(err){
+            console.log(err)
+        }
+    }
+
    useEffect(()=>{
     fetchUser();
+    verifyPayment();
    },[])
 
     return(

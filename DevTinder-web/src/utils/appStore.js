@@ -3,6 +3,7 @@ import userReducer from './userSlice';
 import feedReducer from '../utils/feedSlice'
 import connectionReducer from '../utils/connectionsSlice';
 import requestReducer from '../utils/requestsSlice'
+import verifyPaymentReducer from '../utils/verify-paymentSlice'
 
 
 const appStore=configureStore({
@@ -10,7 +11,8 @@ const appStore=configureStore({
         user:userReducer,
         feed:feedReducer,
         connections:connectionReducer,
-        request:requestReducer
+        request:requestReducer,
+        payment:verifyPaymentReducer
     }
 });
 

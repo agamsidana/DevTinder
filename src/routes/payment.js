@@ -76,7 +76,7 @@ paymentRouter.post('/create-order',userAuth,async (req,res)=>{
 
 });
 
-paymentRouter.get('payment-verify',userAuth,(req,res)=>{
+paymentRouter.get('/payment-verify',userAuth,(req,res)=>{
 
     const loggedInUser=req.user;
 

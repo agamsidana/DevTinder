@@ -2,7 +2,13 @@ import axios from "axios";
 
 import { BASE_URL } from "../utils/constant";
 
+import { useSelector } from "react-redux";
+
 function Premium() {
+
+  const payment=useSelector((state)=>state.payment);
+  
+
   async function handlePremium(type) {
     const res = await axios.post(
       BASE_URL + "/create-order",
@@ -16,7 +22,8 @@ function Premium() {
   }
 
   return (
-    <div className="flex gap-7 justify-center mt-5 items-center">
+    <> 
+    {!payment ? <div className="flex gap-7 justify-center mt-5 items-center">
       <div className="card bg-base-100 w-96 shadow-sm">
         <div className="card-body items-center">
           <h2 className="card-title font-bold text-xl">Silver Membership</h2>
@@ -56,7 +63,8 @@ function Premium() {
           </div>
         </div>
       </div>
-    </div>
+    </div> : <h1>you already have premium</h1>}
+    </>
   );
 }
 
