@@ -76,6 +76,16 @@ paymentRouter.post('/create-order',userAuth,async (req,res)=>{
 
 });
 
+paymentRouter.get('payment-verify',userAuth,(req,res)=>{
+
+    const loggedInUser=req.user;
+
+    const isPremium=loggedInUser.isPremium;
+
+    return res.json({isPremium});
+
+});
+
 paymentRouter.post('/webhook',async (req,res)=>{
 
     const signature=req.headers['stripe-signature'];
