@@ -1,4 +1,12 @@
+import { useEffect } from "react";
+
 function Chat() {
+
+
+  useEffect(()=>{
+    const socket=createSocketConnection();
+  })
+
   return (
     <div className="flex justify-center overflow-hidden">
       <div className="border-2 border-black h-96 w-1/2 relative">
@@ -28,5 +36,6 @@ function Chat() {
     </div>
   );
 }
+import { createSocketConnection } from "../utils/socket";
 
 export default Chat;
