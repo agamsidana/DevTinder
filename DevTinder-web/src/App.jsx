@@ -10,6 +10,7 @@ import Requests from "./components/requests"
 import Premium from "./components/premium"
 import Success from "./components/success"
 import Failure from "./components/failure"
+import Chat from "./components/chat"
 
 
 
@@ -26,7 +27,8 @@ function App() {
         {path:'requests',element:<Requests/>},
         {path:'premium',element:<Premium/>},
         {path:'success',element:<Success/>},
-        {path:'failure',element:<Failure/>}
+        {path:'failure',element:<Failure/>},
+        {path:'chat/:targetId',element:<Chat/>}
       ]
     }
   ])
