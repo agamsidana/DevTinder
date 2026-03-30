@@ -1,6 +1,7 @@
 const socket = require("socket.io");
 const crypto = require("crypto");
 const { Chat } = require("../models/chat");
+const {ConnectionRequest}=require('../models/connectionRequest');
 
 function generateRoomId(userId, targetId) {
   const sortedId = [userId, targetId].sort().join("_");
@@ -23,6 +24,21 @@ function initializeSocket(server) {
     socket.on("sendMessage", async ({ userId, targetId, text,firstName,lastName }) => {
       try {
         const roomId = generateRoomId(userId, targetId);
+
+        //check if userId and targetUserId have a connection
+        const connection=await ConnectionRequest.findOne({
+          $or:[
+            {fromUserId:userId},
+            {fromUserId:targetId}
+          ],
+          $or:[
+            {toUserId:userId},
+            {toUserId:targetId}
+          ],
+          status:'accepted'
+        });
+
+        if(!connection) return;
 
         let chat = await Chat.findOne({
           participants: { $all: [userId, targetId] },
