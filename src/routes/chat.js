@@ -10,6 +10,9 @@ chatRouter.get("/chat/:targetId", userAuth, async (req, res) => {
 
   let chat = await Chat.findOne({
     participants: { $all: [userId, targetId] },
+  }).populate({
+    path:'messages.senderId',
+    select:'firstName lastName'
   });
 
   if (!chat) {
