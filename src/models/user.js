@@ -83,7 +83,7 @@ const userSchema=new mongoose.Schema({
 
     photo_url:{
         type:String,
-        default:'https://static.vecteezy.com/system/resources/previews/026/619/142/original/default-avatar-profile-icon-of-social-media-user-photo-image-vector.jpg',
+        default:'https://www.gravatar.com/avatar/?d=mp&s=200',
         validate(value){
             if(!validator.isURL(value)){
                 throw new Error('Please enter a valid photo URL: '+ value);

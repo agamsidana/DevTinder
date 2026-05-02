@@ -23,8 +23,12 @@ function Premium() {
 
   return (
     <> 
-    {!payment ? <div className="flex gap-7 justify-center mt-5 items-center">
-      <div className="card bg-base-100 w-96 shadow-sm">
+    {payment ? <div className="flex gap-7 justify-center  items-center bg-gradient-to-br from-[#0F0C29] via-[#6D28D9] to-[#EC4899] h-[80vh]">
+      <div className="card bg-gradient-to-br from-[#2E1065]/90 via-[#4C1D95]/85 to-[#6D28D9]/80
+backdrop-blur-xl
+border border-white/10
+shadow-[0_0_30px_rgba(168,85,247,0.4)]
+rounded-2xl w-96">
         <div className="card-body items-center">
           <h2 className="card-title font-bold text-xl">Silver Membership</h2>
           <ul className="list">
@@ -35,7 +39,10 @@ function Premium() {
           </ul>
           <div className="card-actions">
             <button
-              className="btn btn-secondary"
+              className="btn bg-pink-500 hover:bg-pink-600
+text-white
+font-semibold transition duration-300
+shadow-lg shadow-pink-500/40"
               onClick={() => handlePremium("Silver")}
             >
               Buy Silver
@@ -44,7 +51,11 @@ function Premium() {
         </div>
       </div>
 
-      <div className="card bg-base-100 w-96 shadow-sm">
+      <div className="card w-96 bg-gradient-to-br from-[#2E1065]/90 via-[#4C1D95]/85 to-[#6D28D9]/80
+backdrop-blur-xl
+border border-white/10
+shadow-[0_0_40px_rgba(236,72,153,0.6)]
+rounded-2xl">
         <div className="card-body items-center">
           <h2 className="card-title font-bold text-xl">Gold Membership</h2>
           <ul className="list">
@@ -55,7 +66,11 @@ function Premium() {
           </ul>
           <div className="card-actions">
             <button
-              className="btn btn-primary"
+              className="btn bg-gradient-to-r from-purple-500 to-pink-500
+hover:from-purple-600 hover:to-pink-600
+text-white
+font-semibold transition duration-300
+shadow-lg shadow-pink-500/40"
               onClick={() => handlePremium("Gold")}
             >
               Buy Gold

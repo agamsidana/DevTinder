@@ -21,9 +21,9 @@ export function Navbar(){
   }
 
     return(
-    <div className="navbar bg-base-q00 shadow-sm">
+    <div className="navbar bg-gradient-to-br from-indigo-800 via-purple-800 to-pink-600 sticky top-0 z-1">
   <div className="flex-1">
-    <Link to='/feed' className="btn btn-ghost text-xl">DevTinder</Link>
+    <a href='/feed' className="btn btn-ghost text-xl">DevTinder</a>
   </div>
   {user && <div className="flex gap-1 items-center">
     <p>Welcome,{user.firstName}</p>
@@ -41,19 +41,18 @@ export function Navbar(){
         <li>
           <Link to="/profile" className="justify-between">
             Profile
-            <span className="badge">New</span>
           </Link>
         </li>
         <li>
-          <Link to='/connections'>Connections</Link>
+          <a href='/connections'>Connections</a>
         </li>
 
         <li>
-          <Link to='/requests'>Requests</Link>
+          <a href='/requests'>Requests</a>
         </li>
 
         <li>
-          <Link to='/premium'>Premium</Link>
+          <a href='/premium'>Premium</a>
         </li>
 
         
