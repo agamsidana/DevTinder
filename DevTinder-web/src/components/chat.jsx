@@ -57,16 +57,21 @@ function Chat() {
   }, []);
 
   return (
-    <div className="flex justify-center">
-      <div className="border-2 border-black h-96 w-1/2 relative overflow-hidden">
-        <div className="bg-black text-amber-50 h-10 text-center">chat</div>
+    <div className="flex justify-center bg-gradient-to-br from-[#0F0C29] via-[#6D28D9] to-[#EC4899]">
+      <div className="bg-gradient-to-br from-[#2E1065]/90 via-[#4C1D95]/85 to-[#6D28D9]/80
+backdrop-blur-xl
+border border-white/10
+shadow-[0_20px_60px_rgba(168,85,247,0.35)] min-h-122 max-h-122 w-1/2 relative overflow-hidden my-2">
+        <div className="bg-transparent
+border-b border-white/10 p-2
+text-white text-center">Chat</div>
 
         <div className="overflow-y-scroll h-full pb-20">
           {messages.length > 0 &&
             messages.map((msg, idx) => (
               <div
                 key={idx}
-                className={`chat ${userId.toString() === msg.userId._toString() ? "chat-end" : "chat-start"}`}
+                className={`chat ${userId.toString() === msg.userId.toString() ? "chat-end" : "chat-start"}`}
               >
                 <div className="chat-header">
                   {msg.firstName + " " + msg.lastName}
@@ -88,7 +93,11 @@ function Chat() {
             </label>
           </div>
           <button
-            className="btn btn-neutral outline-0"
+            className="btn btn-neutral outline-0 bg-pink-500 hover:bg-pink-600
+text-white
+shadow-lg shadow-pink-500/40
+px-5 py-2
+transition duration-300"
             onClick={handleSendMessage}
           >
             Send

@@ -37,7 +37,7 @@ function Requests() {
   }, []);
 
   return (
-    <div className="flex justify-center mt-10">
+    <div className="flex justify-center bg-gradient-to-br from-[#0F0C29] via-[#6D28D9] to-[#EC4899] min-h-[90vh] py-5">
       <div className="w-1/2 ">
        {!requests.length && <h1 className="text-2xl text-center font-bold">No Requests Found</h1>}
         {requests.length > 0 && (
@@ -49,7 +49,8 @@ function Requests() {
               const { firstName, lastName, photo_url, age, gender, about } =
                 request.fromUserId;
               return (
-                <li key={request._id} className="list-row bg-base-300">
+                <li key={request._id} className="list-row bg-gradient-to-r from-[#2E1065]/90 via-[#4C1D95]/85 to-[#6D28D9]/80
+backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_rgba(168,85,247,0.35)]">
                   <div>
                     <img className="size-10 rounded-box" src={photo_url} />
                   </div>
@@ -65,13 +66,16 @@ function Requests() {
 
                   <div className="flex gap-3 items-center">
                     <button
-                      className="btn btn-primary btn-sm"
+                      className="btn btn-sm bg-indigo-600 hover:bg-indigo-700
+text-white
+shadow-lg shadow-indigo-500/40"
                       onClick={() => reviewRequest("rejected", request._id)}
                     >
                       Reject
                     </button>
                     <button
-                      className="btn btn-secondary btn-sm"
+                      className="btn text-white btn-sm bg-pink-500 hover:bg-pink-600
+shadow-lg shadow-pink-500/40"
                       onClick={() => reviewRequest("accepted", request._id)}
                     >
                       Accept
