@@ -13,5 +13,5 @@ const feedSlice=createSlice({
 
 });
 
- export const {addFeed,removeFeedById}=feedSlice.actions;
+export const {addFeed,removeFeedById}=feedSlice.actions;
 export default feedSlice.reducer;

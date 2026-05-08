@@ -67,7 +67,7 @@ border-b border-white/10 p-2
 text-white text-center">Chat</div>
 
         <div className="overflow-y-scroll h-full pb-20">
-          {messages.length > 0 &&
+          {messages?.length > 0 &&
             messages.map((msg, idx) => (
               <div
                 key={idx}

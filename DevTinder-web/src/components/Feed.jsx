@@ -6,6 +6,8 @@ import { useEffect } from "react";
 import UserCard from "./userCard";
 import { AnimatePresence, motion } from "motion/react";
 import { useRef } from "react";
+import { Link } from "react-router-dom";
+import { Icon } from "@iconify/react";
 
 function Feed() {
   const dispatch = useDispatch();
@@ -19,8 +21,8 @@ function Feed() {
   };
 
   useEffect(() => {
-    getFeed();
-  }, []);
+    if (!feed.length) getFeed();
+  }, [feed]);
 
   function handleUserCardExit(type) {
     exitCardAnimation.current = type;
@@ -28,8 +30,8 @@ function Feed() {
 
   return (
     <div className="flex justify-center items-center bg-gradient-to-br from-[#1E1B4B] via-[#6D28D9] to-[#EC4899] min-h-[79vh]">
-      <AnimatePresence mode="wait">
-        {feed.length > 0 && (
+      {feed.length > 0 ? (
+        <AnimatePresence mode="wait">
           <motion.div
             key={feed[0]._id}
             custom={exitCardAnimation}
@@ -49,8 +51,22 @@ function Feed() {
               handleUserCardExit={handleUserCardExit}
             />
           </motion.div>
-        )}
-      </AnimatePresence>
+        </AnimatePresence>
+      ) : (
+        <div className="flex flex-col gap-1.5 justify-center h-full items-center">
+          <h1 className="text-4xl font-bold">You're all caught up!</h1>
+          <p className="text-[14px]">
+            No more developers profile to show. 
+          </p>
+          <p className="text-[14px]">Check back later for new connections.</p>
+          <Link to="/feed" className="btn bg-pink-500 hover:bg-pink-600" onClick={()=>{
+            window.location.reload()
+          }}>
+            <Icon icon="material-symbols-light:refresh-rounded" width={24} className="text-white" />
+            Refresh
+          </Link>
+        </div>
+      )}
     </div>
   );
 }

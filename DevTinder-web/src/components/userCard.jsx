@@ -5,7 +5,7 @@ import { removeFeedById } from "../utils/feedSlice";
 import { Icon } from "@iconify/react";
 import { motion } from "motion/react"
 
-function UserCard({ user, isButtons,handleUserCardExit }) {
+function UserCard({ user,handleUserCardExit }) {
   const { _id, firstName, lastName, photo_url, age, gender, about } = user;
   const dispatch = useDispatch();
 

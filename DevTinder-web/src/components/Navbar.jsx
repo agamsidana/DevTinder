@@ -44,15 +44,15 @@ export function Navbar(){
           </Link>
         </li>
         <li>
-          <a href='/connections'>Connections</a>
+          <Link to='/connections'>Connections</Link>
         </li>
 
         <li>
-          <a href='/requests'>Requests</a>
+          <Link to='/requests'>Requests</Link>
         </li>
 
         <li>
-          <a href='/premium'>Premium</a>
+          <Link to='/premium'>Premium</Link>
         </li>
 
         

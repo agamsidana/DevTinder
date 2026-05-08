@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { BASE_URL } from "../utils/constant";
 import { addRequests, removeRequestById } from "../utils/requestsSlice";
 import { useEffect } from "react";
+import { Link } from "react-router-dom";
 
 function Requests() {
   const requests = useSelector((state) => state.request);
@@ -39,8 +40,7 @@ function Requests() {
   return (
     <div className="flex justify-center bg-gradient-to-br from-[#0F0C29] via-[#6D28D9] to-[#EC4899] min-h-[90vh] py-5">
       <div className="w-1/2 ">
-       {!requests.length && <h1 className="text-2xl text-center font-bold">No Requests Found</h1>}
-        {requests.length > 0 && (
+        {requests.length > 0 ? (
           <ul className="list flex flex-col gap-5">
             <h1 className="text-center text-2xl font-bold">
               Connection Requests
@@ -85,7 +85,14 @@ shadow-lg shadow-pink-500/40"
               );
             })}
           </ul>
-        )}
+        ) : <div className="flex flex-col gap-1.5 justify-center h-full items-center"> 
+            <h1 className="text-4xl font-bold">No Requests Yet!</h1>
+            <p className="text-[14px]">You don't have any connection requests right now.</p>
+            <p className="text-[14px]">Check back later for new ones.</p>
+            <Link to='/feed' className="btn bg-pink-500 hover:bg-pink-600">Explore Developers</Link>
+        </div>
+
+        }
       </div>
     </div>
   );

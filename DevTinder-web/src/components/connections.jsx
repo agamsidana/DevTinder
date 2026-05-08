@@ -27,7 +27,7 @@ function Connections() {
   return (
     <div className="flex justify-center bg-gradient-to-br from-[#0F0C29] via-[#6D28D9] to-[#EC4899] min-h-[90vh] py-5">
       <div className="w-1/2 ">
-        {connections && (
+        {connections.length ? (
           <ul className="list flex flex-col gap-5">
             <h1 className="text-center text-2xl font-bold text-white">
               Connections
@@ -69,7 +69,13 @@ text-white"
               </li>
             ))}
           </ul>
-        )}
+        ) : <div className="flex flex-col gap-1.5 justify-center h-full items-center"> 
+            <h1 className="text-4xl font-bold">No Connections found</h1>
+            <p className="text-[14px]">You haven't connected with anyone yet.</p>
+            <p className="text-[14px]">Start Exploring and connect with awesome Developers!</p>
+            <Link to='/feed' className="btn bg-pink-500 hover:bg-pink-600">Explore Developers</Link>
+        </div>
+        }
       </div>
     </div>
   );

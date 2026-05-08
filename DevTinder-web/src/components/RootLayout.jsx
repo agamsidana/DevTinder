@@ -18,7 +18,7 @@ function RootLayot(){
             dispatch(addUser(res.data));
         }
         catch(err){
-            if(err.status===401)  navigate('/login');
+            if(err.status===401)  navigate('/signup');
             console.log(err);
         }
     }

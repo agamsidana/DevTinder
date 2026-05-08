@@ -10,7 +10,8 @@ import Requests from "./components/requests"
 import Premium from "./components/premium"
 import Success from "./components/success"
 import Failure from "./components/failure"
-import Chat from "./components/chat"
+import Chat from "./components/chat";
+import Signup from "./components/SignUp"
 
 
 
@@ -21,6 +22,7 @@ function App() {
       element:<RootLayot/>,
       children:[
         {path:'login',element:<Login/>},
+        {path:'signup',element:<Signup/>},
         {path:'profile',element:<Profile/>},
         {path:'feed',element:<Feed/>},
         {path:'connections',element:<Connections/>},
@@ -41,4 +43,4 @@ function App() {
   )
 }
 
-export default App
+export default App;
