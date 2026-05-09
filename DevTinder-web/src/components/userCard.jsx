@@ -4,12 +4,16 @@ import { useDispatch } from "react-redux";
 import { removeFeedById } from "../utils/feedSlice";
 import { Icon } from "@iconify/react";
 import { motion } from "motion/react"
+import { useEffect } from "react";
 
-function UserCard({ user,handleUserCardExit }) {
+function UserCard({ user,handleUserCardExit,isInterestedDisabled,isIgnoredDisabled,setIsInterestedDisabled,SetIsIgnoredDisabled }) {
   const { _id, firstName, lastName, photo_url, age, gender, about } = user;
   const dispatch = useDispatch();
 
   const sendRequest = async (status, id) => {
+
+    setIsInterestedDisabled(true);
+    SetIsIgnoredDisabled(true);
 
     try{
     await axios.post(
@@ -24,6 +28,11 @@ function UserCard({ user,handleUserCardExit }) {
    }
    catch(err){
     console.log(err);
+   }
+
+   finally{
+    setIsInterestedDisabled(false);
+    SetIsIgnoredDisabled(false);
    }
   };
 
@@ -106,6 +115,7 @@ border border-white/10 px-1.5"
           onClick={() => {
             sendRequest("ignored", _id);
           }}
+          disabled={isIgnoredDisabled}
         >
           <Icon
             icon="bitcoin-icons:cross-filled"
@@ -121,8 +131,10 @@ border border-white/10 px-1.5"
   active:scale-95
   shadow-[0_8px_20px_rgba(236,72,153,0.45)]
   transition-all duration-200 flex items-center gap-1 text-center cursor-pointer"
+              disabled={isInterestedDisabled}
                onClick={() => {
                  sendRequest("interested", _id);
+                 setIsInterestedDisabled(true);
               }}
         >
           <Icon

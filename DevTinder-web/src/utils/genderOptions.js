@@ -1,14 +1,17 @@
 export const genderOptions=[
     {
-        value:'Male',
+        label:'Male',
+        value:'male',
         icon:'material-symbols:male'
     },
     {
-        value:'Female',
+        label:'Female',
+        value:'female',
         icon:'material-symbols:female'
     },
     {
-        value:'Other',
+        label:'Other',
+        value:'other',
         icon:'ion:female'
     }
 ];

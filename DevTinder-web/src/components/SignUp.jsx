@@ -24,7 +24,7 @@ function Signup() {
   } = methods;
 
   async function handleSignUp(data) {
-    const { firstName, lastName, email, password } = data;
+    const { firstName, lastName, email, password, age,about} = data;
 
     try {
       await axios.post(
@@ -34,6 +34,9 @@ function Signup() {
           lastName,
           emailId: email,
           password,
+          age,
+          gender:selectedGender,
+          about
         },
         { withCredentials: true },
       );
@@ -159,7 +162,7 @@ function Signup() {
                           width={20}
                           className="text-white"
                         />
-                        {gender.value}
+                        {gender.label}
                       </button>
                     );
                   })}

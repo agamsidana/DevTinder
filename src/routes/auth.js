@@ -9,7 +9,7 @@ authRouter.post('/signup',async (req,res)=>{
 
   try{
    validateSignup(req);
-   const {password,firstName,lastName,emailId}=req.body;
+   const {password,firstName,lastName,emailId,age,gender,about}=req.body;
 
    const hashedPassword=await bcrypt.hash(password,10);
 
@@ -17,11 +17,14 @@ authRouter.post('/signup',async (req,res)=>{
     firstName,
     lastName,
     emailId,
-    password:hashedPassword
+    password:hashedPassword,
+    age,
+    gender,
+    about
    });
 
    await user.save();
-   res.status(201).send('user created successfully');
+   res.status(201).send('user created successfully!');
   }
   catch(err){
     res.status(400).send('failed to save user:' + err.message);

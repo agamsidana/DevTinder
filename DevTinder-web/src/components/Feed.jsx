@@ -2,7 +2,7 @@ import axios from "axios";
 import { useDispatch, useSelector } from "react-redux";
 import { BASE_URL } from "../utils/constant";
 import { addFeed } from "../utils/feedSlice";
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 import UserCard from "./userCard";
 import { AnimatePresence, motion } from "motion/react";
 import { useRef } from "react";
@@ -10,6 +10,10 @@ import { Link } from "react-router-dom";
 import { Icon } from "@iconify/react";
 
 function Feed() {
+
+  const [isInterestedDisabled,setIsInterestedDisabled]=useState(false);
+  const [isIgnoredDisabled,SetIsIgnoredDisabled]=useState(false);
+
   const dispatch = useDispatch();
   const { feed } = useSelector((state) => state);
   const exitCardAnimation = useRef(null);
@@ -49,6 +53,10 @@ function Feed() {
               user={feed[0]}
               isButtons={true}
               handleUserCardExit={handleUserCardExit}
+              isInterestedDisabled={isInterestedDisabled}
+              isIgnoredDisabled={isIgnoredDisabled}
+              setIsInterestedDisabled={setIsInterestedDisabled}
+              SetIsIgnoredDisabled={SetIsIgnoredDisabled}
             />
           </motion.div>
         </AnimatePresence>
