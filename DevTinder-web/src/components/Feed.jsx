@@ -33,7 +33,7 @@ function Feed() {
   }
 
   return (
-    <div className="flex justify-center items-center bg-gradient-to-br from-[#1E1B4B] via-[#6D28D9] to-[#EC4899] min-h-[79vh]">
+    <div className="flex justify-center items-center bg-[#FFF1F2] min-h-[79vh]">
       {feed.length > 0 ? (
         <AnimatePresence mode="wait">
           <motion.div
@@ -62,12 +62,12 @@ function Feed() {
         </AnimatePresence>
       ) : (
         <div className="flex flex-col gap-1.5 justify-center h-full items-center">
-          <h1 className="text-4xl font-bold">You're all caught up!</h1>
-          <p className="text-[14px]">
+          <h1 className="text-4xl font-bold text-slate-900">You're all caught up!</h1>
+          <p className="text-[14px] text-slate-700">
             No more developers profile to show. 
           </p>
-          <p className="text-[14px]">Check back later for new connections.</p>
-          <Link to="/feed" className="btn bg-pink-500 hover:bg-pink-600" onClick={()=>{
+          <p className="text-[14px] text-slate-700">Check back later for new connections.</p>
+          <Link to="/feed" className="btn bg-rose-500 hover:bg-rose-600" onClick={()=>{
             window.location.reload()
           }}>
             <Icon icon="material-symbols-light:refresh-rounded" width={24} className="text-white" />

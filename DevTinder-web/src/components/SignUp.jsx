@@ -62,30 +62,31 @@ function Signup() {
   return (
     <FormProvider {...methods}>
       <form onSubmit={handleSubmit(onSubmit)}>
-        <div className="flex justify-center items-center bg-gradient-to-br from-indigo-600 via-purple-600 to-pink-500 py-4">
+        <div className="flex justify-center items-center bg-[#FFF1F2] py-4">
           <div
             className={`w-110 rounded-2xl
-  bg-[#6623a1]
-  border border-white/10 h-auto`}
+  bg-white
+  border border-pink-100 shadow-lg rounded-2xl h-auto`}
           >
             <div className="card-body">
-              <h2 className="text-2xl font-semibold text-center text-white mb-2 justify-center">
+              <h2 className="text-2xl font-semibold text-center text-slate-900 mb-2 text-center">
                 SignUp
               </h2>
 
               <div className="flex gap-4">
                 <fieldset className="fieldset">
-                  <legend>First Name</legend>
+                  <legend className="text-slate-700">First Name</legend>
                   <div className="flex px-3 py-2 border items-center gap-2">
                     <Icon
                       icon="iconamoon:profile-fill"
                       width={20}
-                      className="text-white"
+                      className="text-rose-500"
                     />
                     <RHFTextField
                       name="firstName"
                       placeholder="First Name"
-                      style="outline-none text-white rounded-md w-full"
+                      style="outline-none rounded-md w-full bg-white border text-slate-700
+placeholder:text-slate-400 border-none"
                     />
                   </div>
                   {errors?.firstName &&
@@ -93,17 +94,18 @@ function Signup() {
                 </fieldset>
 
                 <fieldset className="fieldset">
-                  <legend>Last Name</legend>
+                  <legend className="text-slate-700">Last Name</legend>
                   <div className="flex px-3 py-2 border items-center gap-2">
                     <Icon
                       icon="iconamoon:profile-fill"
                       width={20}
-                      className="text-white"
+                      className="text-rose-500"
                     />
                     <RHFTextField
                       name="lastName"
                       placeholder="Last Name"
-                      style="outline-none text-white rounded-md w-full"
+                      style="outline-none rounded-md w-full bg-white border text-slate-700
+placeholder:text-slate-400 border-none"
                     />
                   </div>
                   {errors?.lastName &&
@@ -113,13 +115,14 @@ function Signup() {
 
               <div className="flex gap-4">
                 <fieldset className="fieldset">
-                  <legend>Email Address</legend>
+                  <legend className="text-slate-700">Email Address</legend>
                   <div className="flex px-3 py-2 border items-center gap-2">
-                    <Icon icon="mdi:email" width={20} className="text-white" />
+                    <Icon icon="mdi:email" width={20} className="text-rose-500" />
                     <RHFTextField
                       name="email"
                       placeholder="Email"
-                      style="outline-none text-white rounded-md w-full"
+                      style="outline-none rounded-md w-full bg-white border text-slate-700
+placeholder:text-slate-400 border-none"
                       type="email"
                     />
                   </div>
@@ -127,13 +130,14 @@ function Signup() {
                 </fieldset>
 
                 <fieldset className="fieldset">
-                  <legend>Password</legend>
+                  <legend className="text-slate-700">Password</legend>
                   <div className="flex px-3 py-2 border items-center gap-2 width-full">
-                    <Icon icon="mdi:lock" width={20} className="text-white" />
+                    <Icon icon="mdi:lock" width={20} className="text-rose-500" />
                     <RHFTextField
                       name="password"
                       placeholder="Password"
-                      style="outline-none text-white rounded-md w-full"
+                      style="outline-none rounded-md w-full bg-white border text-slate-700
+placeholder:text-slate-400 border-none"
                       type="password"
                     />
                   </div>
@@ -143,13 +147,13 @@ function Signup() {
               </div>
 
               <div className="gap-2">
-                <legend>Gender</legend>
+                <legend className="text-slate-700">Gender</legend>
                 <div className="flex justify-between">
                   {genderOptions.map((gender, idx) => {
                     const isActive = gender.value === selectedGender;
                     return (
                       <button
-                        className={`btn px-6 s border ${isActive ? "bg-[#EC4899]" : "bg-white/10"}  border-white/20 text-white/80 hover:bg-white/20`}
+                        className={`btn px-6 text-slate-900 border-black ${isActive ? "bg-rose-500" : "bg-white/10"} hover:bg-black/10`}
                         type="button"
                         key={idx}
                         onClick={() => {
@@ -160,7 +164,7 @@ function Signup() {
                         <Icon
                           icon={gender.icon}
                           width={20}
-                          className="text-white"
+                          className=""
                         />
                         {gender.label}
                       </button>
@@ -174,13 +178,14 @@ function Signup() {
 
               <div className="flex gap-4">
                 <fieldset className="fieldset">
-                  <legend>Age</legend>
+                  <legend className="text-slate-700">Age</legend>
                   <div className="flex px-3 py-2 border items-center gap-2 width-full">
-                    <Icon icon="mdi:lock" width={20} className="text-white" />
+                    <Icon icon="mdi:lock" width={20} className="text-rose-500" />
                     <RHFTextField
                       name="age"
                       placeholder="Select your age"
-                      style="outline-none text-white rounded-md w-full"
+                      style="outline-none rounded-md w-full bg-white border text-slate-700
+placeholder:text-slate-400 border-none"
                       type="number"
                     />
                   </div>
@@ -188,17 +193,18 @@ function Signup() {
                 </fieldset>
 
                 <fieldset className="fieldset">
-                  <legend>Location</legend>
+                  <legend className="text-slate-700">Location</legend>
                   <div className="flex px-3 py-2 border items-center gap-2 width-full">
                     <Icon
                       icon="mdi:location"
                       width={20}
-                      className="text-white"
+                      className="text-rose-500"
                     />
                     <RHFTextField
                       name="location"
                       placeholder="Select your location"
-                      style="outline-none text-white rounded-md w-full"
+                      style="outline-none rounded-md w-full bg-white border text-slate-700
+placeholder:text-slate-400 border-none"
                     />
                   </div>
                 </fieldset>
@@ -206,17 +212,18 @@ function Signup() {
 
               <div>
                 <fieldset className="fieldset">
-                  <legend>Your Skills</legend>
+                  <legend className="text-slate-700">Your Skills</legend>
                   <div className="flex px-3 py-2 border items-center gap-2 width-full">
                     <Icon
                       icon="mdi:location"
                       width={20}
-                      className="text-white"
+                      className="text-rose-500"
                     />
                     <RHFTextField
                       name="skills"
                       placeholder="Select your location"
-                      style="outline-none text-white rounded-md w-full"
+                      style="outline-none rounded-md w-full bg-white border text-slate-700
+placeholder:text-slate-400 border-none"
                     />
                   </div>
                   {errors?.skills && handleFormErrors(errors?.skills?.message)}
@@ -225,13 +232,14 @@ function Signup() {
 
               <div>
                 <fieldset className="fieldset">
-                  <legend>About You</legend>
+                  <legend className="text-slate-700">About You</legend>
                   <div className="flex px-3 py-2 border  gap-2 width-full">
-                    <Icon icon="mdi:pencil" width={20} className="text-white" />
+                    <Icon icon="mdi:pencil" width={20} className="text-rose-500" />
                     <RHFTextArea
                       name="about"
                       placeholder="Tell us about yourself..."
-                      style="outline-none text-white rounded-md w-full"
+                      style="outline-none rounded-md w-full bg-white border text-slate-700
+placeholder:text-slate-400 border-none"
                     />
                   </div>
                   {errors?.about && handleFormErrors(errors?.about?.message)}
@@ -239,16 +247,16 @@ function Signup() {
               </div>
 
               <div className="justify-center card-actions">
-                <button className="btn mt-1 rounded-lg font-semibold text-white bg-pink-500 hover:bg-pink-600 transition duration-300 shadow-lg shadow-pink-500/40">
+                <button className="btn mt-1 rounded-lg font-semibold text-white  bg-rose-500 hover:bg-rose-600 transition duration-300 shadow-lg shadow-pink-500/40">
                   SignUp
                 </button>
               </div>
               <div className="text-center">
-                <p className="inline-block text-sm text-textSecondary mt-1">
+                <p className="inline-block text-sm text-textSecondary mt-1 text-slate-600">
                   Existing User?
                 </p>
                 <p
-                  className="inline-block text-pink-500 cursor-pointer"
+                  className="inline-block text-rose-500 hover:text-rose-600 cursor-pointer"
                   onClick={() => {
                     navigate("/login");
                   }}

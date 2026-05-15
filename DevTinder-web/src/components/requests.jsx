@@ -38,26 +38,33 @@ function Requests() {
   }, []);
 
   return (
-    <div className="flex justify-center bg-gradient-to-br from-[#0F0C29] via-[#6D28D9] to-[#EC4899] min-h-[90vh] py-5">
+    <div className="flex justify-center bg-[#FFF1F2] min-h-[90vh] py-5">
       <div className="w-1/2 ">
         {requests.length > 0 ? (
           <ul className="list flex flex-col gap-5">
-            <h1 className="text-center text-2xl font-bold">
+            <h1 className="text-center text-2xl text-slate-900 font-bold">
               Connection Requests
             </h1>
             {requests.map((request) => {
               const { firstName, lastName, photo_url, age, gender, about } =
                 request.fromUserId;
               return (
-                <li key={request._id} className="list-row bg-gradient-to-r from-[#2E1065]/90 via-[#4C1D95]/85 to-[#6D28D9]/80
-backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_rgba(168,85,247,0.35)]">
+                <li
+                  key={request._id}
+                  className="list-row bg-white
+backdrop-blur-xl border border-pink-100 shadow-[0_10px_40px_rgba(244,63,94,0.08)] hover:-translate-y-1
+hover:shadow-2xl
+transition-all duration-300"
+                >
                   <div>
                     <img className="size-10 rounded-box" src={photo_url} />
                   </div>
                   <div>
-                    <div>{firstName + " " + lastName}</div>
+                    <div className="text-slate-900">
+                      {firstName + " " + lastName}
+                    </div>
                     {age && gender && (
-                      <div className="text-xs uppercase font-semibold opacity-60">
+                      <div className="text-xs uppercase font-semibold text-slate-500">
                         {age + "," + gender}
                       </div>
                     )}
@@ -66,15 +73,13 @@ backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_rgba(168,85,247,0.35
 
                   <div className="flex gap-3 items-center">
                     <button
-                      className="btn btn-sm bg-indigo-600 hover:bg-indigo-700
-text-white
-shadow-lg shadow-indigo-500/40"
+                      className="btn btn-sm bg-white border border-slate-200 text-slate-700 hover:bg-slate-200 shadow-lg "
                       onClick={() => reviewRequest("rejected", request._id)}
                     >
                       Reject
                     </button>
                     <button
-                      className="btn text-white btn-sm bg-pink-500 hover:bg-pink-600
+                      className="btn text-white btn-sm bg-rose-500 hover:bg-rose-600
 shadow-lg shadow-pink-500/40"
                       onClick={() => reviewRequest("accepted", request._id)}
                     >
@@ -85,14 +90,22 @@ shadow-lg shadow-pink-500/40"
               );
             })}
           </ul>
-        ) : <div className="flex flex-col gap-1.5 justify-center h-full items-center"> 
-            <h1 className="text-4xl font-bold">No Requests Yet!</h1>
-            <p className="text-[14px]">You don't have any connection requests right now.</p>
-            <p className="text-[14px]">Check back later for new ones.</p>
-            <Link to='/feed' className="btn bg-pink-500 hover:bg-pink-600">Explore Developers</Link>
-        </div>
-
-        }
+        ) : (
+          <div className="flex flex-col gap-1.5 justify-center h-full items-center">
+            <h1 className="text-4xl font-bold text-slate-900">
+              No Requests Yet!
+            </h1>
+            <p className="text-[14px] text-slate-700">
+              You don't have any connection requests right now.
+            </p>
+            <p className="text-[14px] text-slate-700">
+              Check back later for new ones.
+            </p>
+            <Link to="/feed" className="btn bg-rose-500 hover:bg-rose-600">
+              Explore Developers
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

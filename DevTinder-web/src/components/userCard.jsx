@@ -39,24 +39,21 @@ function UserCard({ user,handleUserCardExit,isInterestedDisabled,isIgnoredDisabl
   return (
 
     <div
-      className="w-96 bg-gradient-to-br from-[#2A0B5E] via-[#4A0F7A] to-[#6B0F7F]
-border border-white/10
-rounded-2xl
-shadow-[0_20px_60px_rgba(168,85,247,0.35)] flex flex-col items-center p-3"
+      className="w-96 bg-white border border-pink-100 rounded-2xl shadow-xl flex flex-col items-center p-3"
     >
       <img
         src={photo_url}
         alt="photo_url"
-        className="rounded-full object-cover ring-purple-600 shadow-[0_0_40px_rgba(236,72,153,0.25)] h-36 w-36"
+        className="rounded-full h-36 w-36 border-4 border-pink-200"
       />
-      <h1 className="text-center text-white font-semibold tracking-wide">{`${firstName} ${lastName}`}</h1>
+      <h1 className="text-center text-slate-900 font-semibold tracking-wide">{`${firstName} ${lastName}`}</h1>
 
-      <div className="flex gap-1.5  text-white/70">
+      <div className="flex gap-1.5 text-slate-700">
         <div className="flex gap-1 items-center">
            <Icon
             icon="uil:calender"
             width={20}
-            className="text-white/70 hover:text-pink-400"
+            className="text-rose-500 hover:text-rose-600"
           />
           <p >{`Age: ${age}`}</p>
         </div>
@@ -64,34 +61,30 @@ shadow-[0_20px_60px_rgba(168,85,247,0.35)] flex flex-col items-center p-3"
             <Icon
             icon="iconamoon:profile-fill"
             width={20}
-            className="text-white/70 hover:text-pink-400"
+            className="text-rose-500 hover:text-rose-600"
           />
           <p>{`Gender: ${gender}`}</p>
         </div>
       </div>
 
-      <div className="flex flex-wrap justify-center gap-1 p-2">
+      <div className="flex flex-wrap justify-center gap-1 p-2 text-rose-500">
         <p
-          className="rounded-xl bg-gradient-to-r from-white/10 to-white/5
-border border-white/10 px-1.5"
+          className="rounded-xl bg-rose-50 border border-rose-100 px-1.5"
         >
           React Js
         </p>
         <p
-          className="rounded-xl bg-gradient-to-r from-white/10 to-white/5
-border border-white/10 px-1.5"
+          className="rounded-xl bg-rose-50 border border-rose-100 px-1.5"
         >
           JavaScript
         </p>
         <p
-          className="rounded-xl bg-gradient-to-r from-white/10 to-white/5
-border border-white/10 px-1.5"
+          className="rounded-xl bg-rose-50 border border-rose-100 px-1.5"
         >
           Node.Js
         </p>
         <p
-          className="rounded-xl bg-gradient-to-r from-white/10 to-white/5
-border border-white/10 px-1.5"
+          className="rounded-xl bg-rose-50 border border-rose-100 px-1.5"
         >
           TypeScript
         </p>
@@ -105,12 +98,10 @@ border border-white/10 px-1.5"
 
       <div className="flex justify-between w-[90%]">
         <button
-          className="px-6 py-2.5 rounded-lg font-semibold text-white/90
-  bg-white/5
-  border border-white/20
-  hover:bg-white/10
+          className="px-6 py-2.5 rounded-lg font-semibold
+  bg-white border border-pink-200 text-rose-500
+  hover:bg-rose-50
   active:scale-95
-  backdrop-blur-md
   transition-all duration-200 flex items-center gap-1 text-center cursor-pointer"
           onClick={() => {
             sendRequest("ignored", _id);
@@ -120,16 +111,13 @@ border border-white/10 px-1.5"
           <Icon
             icon="bitcoin-icons:cross-filled"
             width={20}
-            className="text-white/70 hover:text-pink-400"
+            className="text-rose-500 hover:text-rose-600"
           />
           Ignore
         </button>
         <button
-          className="px-6 py-2.5 rounded-lg font-semibold text-white
-  bg-gradient-to-r from-[#EC4899] to-[#F43F5E]
-  hover:from-[#DB2777] hover:to-[#E11D48]
-  active:scale-95
-  shadow-[0_8px_20px_rgba(236,72,153,0.45)]
+          className="px-6 py-2.5 rounded-lg font-semibold bg-rose-500 hover:bg-rose-600 text-white
+shadow-md shadow-rose-200
   transition-all duration-200 flex items-center gap-1 text-center cursor-pointer"
               disabled={isInterestedDisabled}
                onClick={() => {
@@ -140,7 +128,7 @@ border border-white/10 px-1.5"
           <Icon
             icon="line-md:heart-filled"
             width={20}
-            className="text-white/70 hover:text-pink-400"
+            className="text-rose-200 hover:text-rose-300"
           />
           Interested
         </button>

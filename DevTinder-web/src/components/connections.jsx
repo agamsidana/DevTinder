@@ -25,31 +25,33 @@ function Connections() {
   }, []);
 
   return (
-    <div className="flex justify-center bg-gradient-to-br from-[#0F0C29] via-[#6D28D9] to-[#EC4899] min-h-[90vh] py-5">
+    <div className="flex justify-center bg-[#FFF1F2] min-h-[90vh] py-5">
       <div className="w-1/2 ">
         {connections.length ? (
           <ul className="list flex flex-col gap-5">
-            <h1 className="text-center text-2xl font-bold text-white">
+            <h1 className="text-center text-2xl font-bold text-slate-900">
               Connections
             </h1>
             {connections.map((connection) => (
               <li
-                className="list-row bg-gradient-to-r from-[#2E1065]/90 via-[#4C1D95]/85 to-[#6D28D9]/80
-backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_rgba(168,85,247,0.35)]"
+                className="list-row bg-white
+backdrop-blur-xl border border-pink-100 shadow-[0_10px_35px_rgba(244,63,94,0.08)] hover:-translate-y-1
+hover:shadow-xl
+transition-all duration-300"
                 key={connection._id}
               >
                 <div>
                   <img
-                    className="size-10 rounded-box"
+                    className="size-10 rounded-box "
                     src={connection.photo_url}
                   />
                 </div>
                 <div>
-                  <div className="text-white">
+                  <div className="text-slate-900">
                     {connection.firstName + " " + connection.lastName}
                   </div>
                   {connection.age && connection.gender && (
-                    <div className="text-xs uppercase font-semibold opacity-60">
+                    <div className="text-xs uppercase text-slate-500">
                       {connection.age + "," + connection.gender}
                     </div>
                   )}
@@ -58,24 +60,27 @@ backdrop-blur-xl border border-white/10 shadow-[0_10px_40px_rgba(168,85,247,0.35
                   <p className="list-col-wrap text-xs">{connection.about}</p>
                 )}
                 <Link to={`/chat/${connection._id}`}>
-                  <button
-                    class="btn bg-pink-500 hover:bg-pink-600
-shadow-lg shadow-pink-500/40
-text-white"
-                  >
+                  <button class="btn bg-rose-500 hover:bg-rose-600 shadow-md shadow-rose-200x">
                     Chat
                   </button>
                 </Link>
               </li>
             ))}
           </ul>
-        ) : <div className="flex flex-col gap-1.5 justify-center h-full items-center"> 
-            <h1 className="text-4xl font-bold">No Connections found</h1>
-            <p className="text-[14px]">You haven't connected with anyone yet.</p>
-            <p className="text-[14px]">Start Exploring and connect with awesome Developers!</p>
-            <Link to='/feed' className="btn bg-pink-500 hover:bg-pink-600">Explore Developers</Link>
-        </div>
-        }
+        ) : (
+          <div className="flex flex-col gap-1.5 justify-center h-full items-center">
+            <h1 className="text-4xl font-bold text-slate-900">No Connections found</h1>
+            <p className="text-[14px] text-slate-700">
+              You haven't connected with anyone yet.
+            </p>
+            <p className="text-[14px] text-slate-700">
+              Start Exploring and connect with awesome Developers!
+            </p>
+            <Link to="/feed" className="btn bg-rose-500 hover:bg-rose-600">
+              Explore Developers
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );
