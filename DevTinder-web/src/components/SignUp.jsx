@@ -3,12 +3,12 @@ import { BASE_URL } from "../utils/constant";
 import { useNavigate } from "react-router-dom";
 import { FormProvider, useForm } from "react-hook-form";
 import { Icon } from "@iconify/react";
-import RHFTextField from "../Hook/rhf-textField";
+import RHFTextField from "../hook/rhf-textField";
 import { genderOptions } from "../utils/genderOptions";
 import { useState } from "react";
 import { yupResolver } from "@hookform/resolvers/yup";
 import { SignUpSchema } from "../schema/validators";
-import RHFTextArea from "../Hook/rhf-textArea";
+import RHFTextArea from "../hook/rhf-textArea";
 
 function Signup() {
   const navigate = useNavigate();
