@@ -11,7 +11,7 @@ function generateRoomId(userId, targetId) {
 function initializeSocket(server) {
   const io = socket(server, {
     cors: {
-      origin: "http://localhost:5173",
+      origin: "https://dev-tinder-git-main-sidanaagam-8250s-projects.vercel.app/"
     },
   });
 

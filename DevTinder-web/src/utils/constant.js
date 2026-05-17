@@ -1,1 +1,1 @@
-export const BASE_URL="http://localhost:7777";
+export const BASE_URL="https://jxzrxp23-7777.inc1.devtunnels.ms";
