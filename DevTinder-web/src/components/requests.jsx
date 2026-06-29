@@ -39,7 +39,7 @@ function Requests() {
 
   return (
     <div className="flex justify-center bg-[#FFF1F2] min-h-[90vh] py-5">
-      <div className="w-1/2 ">
+      <div className="w-full md:w-1/2 mx-5">
         {requests.length > 0 ? (
           <ul className="list flex flex-col gap-5">
             <h1 className="text-center text-2xl text-slate-900 font-bold">
@@ -92,13 +92,13 @@ shadow-lg shadow-pink-500/40"
           </ul>
         ) : (
           <div className="flex flex-col gap-1.5 justify-center h-full items-center">
-            <h1 className="text-4xl font-bold text-slate-900">
+            <h1 className="text-2xl md:text-4xl font-bold text-slate-900">
               No Requests Yet!
             </h1>
-            <p className="text-[14px] text-slate-700">
+            <p className="text-[12px] md:text-[14px] text-slate-700">
               You don't have any connection requests right now.
             </p>
-            <p className="text-[14px] text-slate-700">
+            <p className="text-[12px] md:text-[14px] text-slate-700">
               Check back later for new ones.
             </p>
             <Link to="/feed" className="btn bg-rose-500 hover:bg-rose-600">

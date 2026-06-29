@@ -59,7 +59,7 @@ function Chat() {
   return (
     <div className="flex justify-center bg-rose-50 ">
       <div className="bg-white backdrop-blur-xl border border-pink-100
-shadow-[0_10px_40px_rgba(244,63,94,0.08)] min-h-122 max-h-122 w-1/2 relative overflow-hidden my-2 rounded-xl">
+shadow-[0_10px_40px_rgba(244,63,94,0.08)] min-h-122 max-h-122 w-full md:w-1/2 mx-5 relative overflow-hidden my-2 rounded-xl">
         <div className="bg-transparent
 border-b border-pink-100 p-2 text-rose-500 text-center">Chat</div>
 
@@ -73,7 +73,7 @@ border-b border-pink-100 p-2 text-rose-500 text-center">Chat</div>
                 <div className="chat-header text-rose-500">
                   {msg.firstName + " " + msg.lastName}
                 </div>
-                <div className="chat-bubble bg-slate-700 text-white break-all">{msg.text}</div>
+                <div className="chat-bubble bg-slate-700 text-white break-all text-[10px] md:text-sm">{msg.text}</div>
               </div>
             ))}
         </div>

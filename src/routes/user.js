@@ -4,7 +4,7 @@ const userRouter=express.Router();
 const ConnectionRequest=require('../models/connectionRequest');
 const User=require('../models/user')
 
-const USER_SAFE_DATA=['firstName','lastName','skills','age','gender','photo_url']
+const USER_SAFE_DATA=['firstName','lastName','skills','age','gender','photo_url','about'];
 
 userRouter.get('/user/request/received',userAuth,async (req,res)=>{
 
