@@ -53,7 +53,7 @@ function Login() {
       <form onSubmit={handleSubmit(onSubmit)}>
         <div className="flex justify-center items-center bg-[#FFF1F2] h-[90vh]">
           <div
-            className={`w-80 bg-white border border-pink-100 rounded-2xl shadow-lg
+            className={`w-70 md:w-80 bg-white border border-pink-100 rounded-2xl shadow-lg
    h-fit`}
           >
             <div className="card-body h-fit">

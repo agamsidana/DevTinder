@@ -92,12 +92,12 @@ function EditProfile() {
     <div className="flex flex-col items-center bg-[#FFF1F2]">
       {isToastActive && <Toast title="Edit Successfull!" />}
       <div
-        className={`flex justify-center gap-20 mt-${isToastActive && "20"} my-2`}
+        className={`flex flex-wrap justify-center gap-20 mt-${isToastActive && "20"} my-2`}
       >
         <FormProvider {...methods}>
           <form onSubmit={handleSubmit(onSubmit)}>
-            <div className="flex justify-center ">
-              <div className="card w-100  card-md shadow-sm flex">
+            <div className="flex justify-center">
+              <div className="w-75 sm:w-98 md:w-100 shadow-sm flex">
                 <div
                   className="card-body rounded-[10px] bg-white backdrop-blur-xl border border-slate-700 p-6 shadow-xl"
                 >
@@ -180,7 +180,7 @@ focus:ring-rose-100"/>
                       <RHFTextArea name="about" style="bg-white input border border-pink-200 text-slate-700 focus:border-rose-400
 focus:ring-4
 focus:ring-rose-100"></RHFTextArea>
-                       {errors?.about && handleFormErrors(errors.about.message)}
+                       {errors?.f && handleFormErrors(errors.about.message)}
                     </fieldset>
                   </div>
 
@@ -245,9 +245,9 @@ focus:ring-rose-100" />
         </FormProvider>
 
         <div
-          className="w-90 bg-white border border-slate-700 p-3 rounded-xl"
+          className="w-72 md:w-90 bg-white border border-slate-700 p-3 rounded-xl"
         >
-          <div className="h-1/2 flex flex-col gap-3">
+          <div className="flex flex-col gap-3 ">
             <div className="flex gap-2 items-center">
               <Icon icon="iconoir:eye" width={18} className="text-rose-500" />
               <p className="text-[12px] text-slate-900">Profile Preview</p>
@@ -261,7 +261,7 @@ focus:ring-rose-100" />
               />
             </div>
 
-            <div className="flex justify-center">
+            <div className="flex justify-center mb-1">
               <div className="text-center">
                 <p className="text-[14px] text-slate-900 font-medium">{`${firstName} ${lastName}`}</p>
                 <p className="text-[13px] text-slate-500">{user.emailId}</p>
@@ -330,7 +330,7 @@ focus:ring-rose-100" />
       </div>
 
       {isTipActive && (
-        <div className= "bg-pink-50 border border-pink-200 rounded-[10px] backdrop-blur-xl  shadow-xl w-215 mb-3 mt-1">
+        <div className= "bg-pink-50 border border-pink-200 rounded-[10px] backdrop-blur-xl hidden lg:block shadow-xl w-215 mb-3 mt-1">
           <div className="flex justify-between p-4">
             <div className="flex items-center gap-2">
               <div>

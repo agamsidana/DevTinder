@@ -23,13 +23,13 @@ function Premium() {
   return (
     <>
       {payment ? (
-        <div className="flex gap-7 justify-center  items-center bg-[#FFF1F2] h-[80vh]">
+        <div className="flex flex-wrap gap-7 justify-center  items-center bg-[#FFF1F2] min-h-[80vh] py-5">
           <div
             className="card bg-white
 backdrop-blur-xl
 border border-pink-100
 shadow-[0_0_30px_rgba(168,85,247,0.4)]
-rounded-2xl w-96 hover:-translate-y-1
+rounded-2xl w-72 md:w-96 sm:w-85 hover:-translate-y-1
 hover:shadow-2xl
 transition-all duration-300"
           >
@@ -92,7 +92,7 @@ shadow-lg"
             </div>
           </div>
 
-          <div className="card w-96 bg-white backdrop-blur-xl border border-pink-100 shadow-[0_0_40px_rgba(236,72,153,0.6)] rounded-2xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
+          <div className="card  w-72 md:w-96 sm:w-85 bg-white backdrop-blur-xl border border-pink-100 shadow-[0_0_40px_rgba(236,72,153,0.6)] rounded-2xl hover:-translate-y-1 hover:shadow-2xl transition-all duration-300">
             <div className="card-body items-center">
                <Icon
                     icon="material-symbols-light:crown-outline"

@@ -26,7 +26,7 @@ function Connections() {
 
   return (
     <div className="flex justify-center bg-[#FFF1F2] min-h-[90vh] py-5">
-      <div className="w-1/2 ">
+      <div className="w-full md:w-1/2 mx-4">
         {connections.length ? (
           <ul className="list flex flex-col gap-5">
             <h1 className="text-center text-2xl font-bold text-slate-900">
@@ -42,7 +42,7 @@ transition-all duration-300"
               >
                 <div>
                   <img
-                    className="size-10 rounded-box "
+                    className="size-10 rounded-full "
                     src={connection.photo_url}
                   />
                 </div>
@@ -60,7 +60,7 @@ transition-all duration-300"
                   <p className="list-col-wrap text-xs">{connection.about}</p>
                 )}
                 <Link to={`/chat/${connection._id}`}>
-                  <button class="btn bg-rose-500 hover:bg-rose-600 shadow-md shadow-rose-200x">
+                  <button class="btn btn-sm bg-rose-500 hover:bg-rose-600 shadow-md shadow-rose-200x">
                     Chat
                   </button>
                 </Link>
@@ -69,11 +69,11 @@ transition-all duration-300"
           </ul>
         ) : (
           <div className="flex flex-col gap-1.5 justify-center h-full items-center">
-            <h1 className="text-4xl font-bold text-slate-900">No Connections found</h1>
-            <p className="text-[14px] text-slate-700">
+            <h1 className="text-2xl md:text-4xl font-bold text-slate-900">No Connections found</h1>
+            <p className="md:text-[14px] text-[12px] text-slate-700">
               You haven't connected with anyone yet.
             </p>
-            <p className="text-[14px] text-slate-700">
+            <p className="md:text-[14px] text-[10px] text-slate-700">
               Start Exploring and connect with awesome Developers!
             </p>
             <Link to="/feed" className="btn bg-rose-500 hover:bg-rose-600">
